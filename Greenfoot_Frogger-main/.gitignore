@@ -4,12 +4,6 @@
 # Log file
 *.log
 
-# BlueJ files
-*.ctxt
-
-# Greenfoot project files
-*.greenfoot
-
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
