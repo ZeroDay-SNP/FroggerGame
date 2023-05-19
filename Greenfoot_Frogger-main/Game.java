@@ -27,9 +27,11 @@ public class Game extends World
     Road road2;
     River river;
     Start titleScreen;
+    GameOver gameOver;
     GreenfootSound bgmusic;
     Home home;
-    private Ready ready;
+    private Ready ready = new Ready(new GreenfootSound("reset.wav"));
+    private GreenfootSound gameOverSound = new GreenfootSound("end.wav");
     
     /**
      * Constructor for objects of class MyWorld.
@@ -39,9 +41,10 @@ public class Game extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1, false);
-        setPaintOrder(Car.class, Frogger.class,Rock.class, Log.class);
+        setPaintOrder(Ready.class, Car.class, Frogger.class,Rock.class, Log.class);
         reset();
         titleScreen = new Start(this);
+        gameOver = new GameOver(this);
         Greenfoot.setWorld(titleScreen);
     }
     
@@ -58,10 +61,6 @@ public class Game extends World
             
         // }
        
-        List<Rock> allRocks = getObjects(Rock.class);
-        for(Rock rock : allRocks){
-           
-        }
         List<Car> allCars = getObjects(Car.class);
         for(Car car : allCars){
            car.interact(player);
@@ -73,11 +72,21 @@ public class Game extends World
        
         home.interact(player);
         
+        if(lives < 1) {
+            lives = 3;
+            Greenfoot.setWorld(gameOver);
+            ready.stop();
+            gameOverSound.play();
+        }
+        
     }
     
     public void reset() {
-        ready = new Ready(new GreenfootSound("reset.wav"));
-        ready.reset();
+        
+         
+        removeObjects(getObjects(null));
+        addObject(ready, getWidth()/2, getHeight()/2);
+        
         player = new Frogger(ready);
         lives = 3;
         addObject(player, getWidth()/2, getHeight()-25);

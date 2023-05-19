@@ -15,11 +15,16 @@ public class Ready extends Actor
     
     public Ready(GreenfootSound resetSound) {
         this.resetSound = resetSound;
-        //img = this.getImage();
+        img = this.getImage();
+        img.scale(200, 50);
     }
     
-    public void reset() {
+    public void play() {
         resetSound.play();
+    }
+    
+    public void stop() {
+        resetSound.stop();
     }
     
     public boolean getState() {
@@ -38,10 +43,11 @@ public class Ready extends Actor
         }
         if(resetSound.isPlaying()) {
             isReady = false;
-            //img.setTransparency(255);
+            img.setTransparency(255);
         } else {
             isReady = true;
-            //img.setTransparency(0);
+            resetSound.stop();
+            img.setTransparency(0);
         }
     }
 }

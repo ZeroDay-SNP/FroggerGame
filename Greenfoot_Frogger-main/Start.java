@@ -31,11 +31,13 @@ public class Start extends World
             titleTrack = new GreenfootSound("funnysong.mp3");
             titleTrack.playLoop();
         }
-        showText("PRESS SPACE", getWidth()/2, getHeight()/2);
+        //showText("PRESS SPACE", getWidth()/2, getHeight()/2);
         String key = Greenfoot.getKey();
         if(key != null) {
             if(key.equals("space")) {
                 Greenfoot.setWorld(g);
+                g.reset();
+                titleTrack.stop();
             } else if (key.equals("p")) {
                 if(titleTrack.isPlaying()) {
                     titleTrack.pause();

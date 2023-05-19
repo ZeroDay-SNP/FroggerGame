@@ -43,12 +43,14 @@ public class Frogger extends Actor
         //update the position
         
         clearSounds(sounds);
+        
+        if(getX() > world.getWidth() || getX() < 0 || getY() > world.getHeight() || getY() < 0) {
+            die();
+        }
     }
 
     protected void getKeys(){
-        
         String key = Greenfoot.getKey();
-        System.out.println(ready.getState());
         if(ready.getState()) {
             if(key == null) {
                 key = "";
@@ -81,6 +83,7 @@ public class Frogger extends Actor
     protected void die() {
         world.addObject(new Corpse(img.getWidth(), img.getHeight(), getRotation()), getX(), getY());
         world.lives--;
+        ready.play();   
         reset();
     }
     
