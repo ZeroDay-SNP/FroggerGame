@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=AbstOther
+comment0.text=\r\n\ Has\ \r\n\ speed\r\n\ width\ height\r\n\ world,\ img\r\n\ \r\n\ Does\r\n\ move\ to\ the\ side\ \r\n\ resets\ to\ the\ other\ side\r\n\ interacts\ with\ the\ player\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=speed
+comment1.target=AbstOther(int)
+comment2.params=speed\ w\ h
+comment2.target=AbstOther(int,\ int,\ int)
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ AbstOther\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment4.params=player
+comment4.target=void\ interact(Frogger)
+numComments=5
