@@ -1,0 +1,53 @@
+Critical requirements (Complete all 12 for full marks)
+
+**On time - (Stuff got out of hands, so frankly no)
+
+*Program is complete and error free	(TODO)
+
+* Appropriate javadocs documentation - Method headers	(YES)
+
+* Appropriate javadocs documentation - Class headers	(YES)
+
+* At least 3 subclasses of World which are used to control state of the game - Title, Game, Game Over	(YES)
+
+*Properly passing between the World subclass instances using input and a lives variable	(YES)
+
+*Use of level variable to create game progression (game gets harder)	(YES)
+
+*Demonstrates appropriate use of Data Encapsulation	(YES)
+
+*Demonstrates appropriate use of Method Overloading	(YES)
+
+*Demonstrates appropriate use of Method Overriding	(YES)
+
+*Completes self-assessment	(SURE)
+
+Optional Requirements (Complete 6 to get 100%)
+
+*Custom-made art assets	(YES, a lot of the assets were from sprite sheets but I made the rock custom, the 'READY' thing, and the title screen backdrop)
+
+*Custom-made sound assets	(YES, by technicality, they were mostly all arcade game sounds but I did have to edit them to sound proper)
+
+*Additional Actor subclasses over what we did in class	(TODO: Theres 1 right now)
+
+*Pickup items for some use in game	(TODO)
+
+*Muting of all sounds	(TODO)
+
+*Volume controls of all sounds
+
+*Extra world subclass for pausing or shop or instructions
+
+*Multiplayer
+
+*Time limits	(TODO)
+
+**Screen-scrolling
+
+*Powerups
+
+*Gaining custom skins
+
+*Unlockable achievements (Score multiple times)
+
+*Magical items of an impressive quality 	('READY' indicator? Highscore?)
