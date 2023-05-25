@@ -9,4 +9,5 @@
   <li>Avoid the cars and don't drown!</li>
   <li>Cars get faster every level</li>
   <li>Rocks begin to sink after level 5</li>
+  <li>You have 25 seconds to complete each level</li>
 </ul>
