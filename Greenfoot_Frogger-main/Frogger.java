@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import greenfoot.GreenfootSound;
 
 /**
- * Write a description of class Frogger here.
+ * The frog is controlled by the player.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author      Zachary Sousa
+ * @version     1.00
  */
 public class Frogger extends Actor
 {
@@ -19,6 +19,10 @@ public class Frogger extends Actor
     private ArrayList<GreenfootSound> sounds = new ArrayList<GreenfootSound>();
     private Ready ready;
     
+    /**
+     * Constructor for the player character.
+     * @param ready     the instance of the Ready object (should only be one at any given time).
+     */
     public Frogger(Ready ready){
         img = getImage();
         img.scale(leapSize, leapSize);
@@ -27,8 +31,11 @@ public class Frogger extends Actor
     }
 
     /**
-     * Act - do whatever the Frogger wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * act is called once per frame.
+     * Gets the world.
+     * Calls user input function.
+     * Calls sound clearing function to get rid of any extra sound effects.
+     * If the player passes the edge of the screen they die.
      */
     public void act()
     {
@@ -49,6 +56,11 @@ public class Frogger extends Actor
         }
     }
 
+    /**
+     * getKeys
+     * Handles player movement based on inputs. Also adds sounds to
+     * the playing list.
+     */
     protected void getKeys(){
         String key = Greenfoot.getKey();
         if(ready.getState()) {
@@ -76,27 +88,54 @@ public class Frogger extends Actor
                 move(leapSize);
                 addSound(sounds, jumpFile);
             } 
+            if(key.equalsIgnoreCase("l")) {
+                //world.setLevel(200);
+            }
         }
         
     }
-
+    
+    
+    /**
+     * die
+     * Spawns a Corpse and decrements live counter. Calls reset.
+     */
     protected void die() {
         world.addObject(new Corpse(img.getWidth(), img.getHeight(), getRotation()), getX(), getY());
-        world.lives--;
-        ready.play();   
+        world.setLives(world.getLives()-1);
         reset();
     }
     
+    /**
+     * reset
+     * Resets the rotation and position of the player.
+     * Starts the 'READY' part of the initilization.
+     */
     private void reset(){
         setRotation(-90);
         setLocation(world.getWidth()/2, world.getHeight()-img.getHeight()/2);
+        ready.play(); 
     }
     
+    /**
+     * addSound
+     * Adds a sound to a list of sounds and plays it.
+     * (This allows sounds to stack.)
+     * 
+     * @param list      the ArrayList of sounds
+     * @param file      the file path of the sound to add
+     */
     private void addSound(ArrayList<GreenfootSound> list, String file) {
         list.add(new GreenfootSound(file));
         list.get(list.size()-1).play();
     }
     
+    /**
+     * clearSounds
+     * Searches an array list for any sounds that are completed and removes them.
+     * 
+     * @param list      the ArrayList of sounds
+     */
     private void clearSounds(ArrayList<GreenfootSound> list) {
         for(int i = 0; i < list.size(); i++) {
             if(!list.get(i).isPlaying()) {

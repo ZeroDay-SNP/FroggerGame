@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=Corpse
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ corpse\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ decorative\ corpse\ that\ represents\ a\ previous\ death\ location\ for\ a\ small\ amount\ of\ time.\r\n\ \r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\ \r\n\ @version\ \ \ \ \ 1.00\r\n
 comment1.params=w\ h\ rotation
 comment1.target=Corpse(int,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ the\ corpse.\r\n\ @param\ w\ \ \ \ \ \ \ \ \ the\ width\ of\ the\ corpse\ in\ pixels\r\n\ @param\ h\ \ \ \ \ \ \ \ \ the\ height\ of\ the\ corpse\ in\ pixels\r\n\ @param\ rotation\ \ the\ rotation\ of\ the\ corpse\ in\ degrees\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ corpse\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\r\n\ act\ is\ called\ once\ per\ frame.\r\n\ Slowly\ turns\ the\ corpse\ invisible\ before\ removing\ it.\r\n
 numComments=3

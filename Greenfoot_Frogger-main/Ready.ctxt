@@ -1,15 +1,19 @@
 #BlueJ class context
 comment0.target=Ready
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Ready\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ A\ simple\ class\ that\ asks\ if\ the\ user\ is\ ready\ and\ plays\ a\ sound.\ \r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=resetSound
 comment1.target=Ready(greenfoot.GreenfootSound)
+comment1.text=\r\n\ Constructor\ for\ Ready\r\n\ @param\ resetSound\ \ \ \ \ \ \ \ the\ sound\ to\ play\r\n
 comment2.params=
 comment2.target=void\ play()
+comment2.text=\r\n\ play\r\n\ Plays\ the\ sound\r\n
 comment3.params=
 comment3.target=void\ stop()
+comment3.text=\r\n\ stop\r\n\ Stops\ the\ sound\r\n
 comment4.params=
 comment4.target=boolean\ getState()
+comment4.text=\r\n\ getState\r\n\ @return\ \ \ \ \ \ whether\ the\ sound\ is\ done/the\ player\ should\ be\ ready\r\n
 comment5.params=
 comment5.target=void\ act()
-comment5.text=\r\n\ Act\ -\ do\ whatever\ the\ Ready\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment5.text=\r\n\ act\ is\ called\ once\ per\ frame.\r\n\ Controls\ variables\ transparecny\ based\ on\ whether\ the\ sound\ is\ playing.\r\n
 numComments=6

@@ -1,22 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Road here.
+ * A decorative background element.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author      Zachary Sousa
+ * @version     1.00
  */
 public class Road extends Actor
 {
-    int width;
-    int height = 100;
+    private int width;
+    private int height = 100;
     
-    GreenfootImage img;
-    World world;
+    private GreenfootImage img;
+    private World world;
     
     /**
-     * Act - do whatever the Road wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * act is called once per frame.
+     * Initializes the image elements of the river.
      */
     public void act()
     {

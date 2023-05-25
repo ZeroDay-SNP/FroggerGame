@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class UIElement here.
+ * A simple class for dislpaying a GifImage
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author      Zachary Sousa
+ * @version     1.00
  */
 public class UIElement extends Actor
 {
@@ -12,9 +12,20 @@ public class UIElement extends Actor
     private int width   = -99;
     private int height  = -99;
     
+    /**
+     * Constructor for UIElement
+     * @param gif   the GifImage to display
+     */
     public UIElement(GifImage gif) {
         this.gif = gif;
     }
+    
+    /**
+     * Constructor2 for UIElement
+     * @param gif           the GifImage to display
+     * @param width         the width of the gif in px
+     * @param height        the height of the gif in px
+     */
     public UIElement(GifImage gif, int width, int height) {
         this.gif        = gif;
         this.width      = width;
@@ -22,8 +33,8 @@ public class UIElement extends Actor
     }
     
     /**
-     * Act - do whatever the UIElement wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * act is called once per frame.
+     * Displays each frame of the gif.
      */
     public void act()
     {

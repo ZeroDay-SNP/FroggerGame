@@ -1,11 +1,10 @@
 #BlueJ class context
 comment0.target=Home
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Home\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ goal\ for\ the\ player\ to\ get\ to.\r\n\ \r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\r\n\ @version\ \ \ \ \ 1.00\r\n
 comment1.params=s
 comment1.target=Home(int)
-comment2.params=
-comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Home\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-comment3.params=player
-comment3.target=void\ interact(Frogger)
-numComments=4
+comment1.text=\r\n\ Constructor\ for\ the\ Home/goal.\r\n\ @param\ s\ \ \ \ \ doesn't\ do\ anything\ currently\r\n
+comment2.params=player
+comment2.target=void\ interact(Frogger)
+comment2.text=\r\n\ interact\r\n\ gets\ called\ once\ per\ frame\ of\ gameplay\ by\ the\ Game.\ If\ the\ player\r\n\ touches\ the\ Home\ then\ a\ happy\ sound\ is\ played,\ the\ level\ number\r\n\ is\ incremented,\ and\ the\ level\ refreshes.\r\n\ @param\ player\ \ \ \ \ \ \ \ the\ main\ player\ object\ (Frogger)\r\n
+numComments=3

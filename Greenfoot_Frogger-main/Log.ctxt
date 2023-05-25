@@ -1,10 +1,16 @@
 #BlueJ class context
 comment0.target=Log
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Log\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ A\ log\ that\ the\ player\ can\ ride.\r\n\ \r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\r\n\ @version\ \ \ \ \ 1.00\r\n
 comment1.params=s\ w\ h
 comment1.target=Log(int,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ the\ Log\r\n\ @param\ s\ \ \ \ \ \ \ \ \ the\ speed\ that\ the\ log\ moves\ in\ px\r\n\ @param\ w\ \ \ \ \ \ \ \ \ the\ width\ of\ the\ log\ in\ px\r\n\ @param\ h\ \ \ \ \ \ \ \ \ the\ height\ of\ the\ log\ moves\ in\ px\r\n
 comment2.params=player
 comment2.target=void\ interact(Frogger)
+comment2.text=\r\n\ interact\r\n\ Called\ once\ per\ frame\ by\ the\ Game.\r\n\ Moves\ the\ player\ with\ the\ log.\r\n\ @param\ player\ \ \ \ \ \ \ \ the\ main\ player\ object\r\n
 comment3.params=s
 comment3.target=void\ setSpeed(int)
-numComments=4
+comment3.text=\r\n\ setSpeed\r\n\ Sets\ the\ speed\ of\ the\ Car.\r\n
+comment4.params=
+comment4.target=boolean\ getTouch()
+comment4.text=\r\n\ getTouch\r\n\ @return\ \ \ \ \ \ true\ or\ false\ depending\ on\ if\ the\ player\ is\ touching\ the\ Log\r\n
+numComments=5

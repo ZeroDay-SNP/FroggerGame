@@ -1,19 +1,25 @@
 #BlueJ class context
 comment0.target=Frogger
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Frogger\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ frog\ is\ controlled\ by\ the\ player.\r\n\ \r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\r\n\ @version\ \ \ \ \ 1.00\r\n
 comment1.params=ready
 comment1.target=Frogger(Ready)
+comment1.text=\r\n\ Constructor\ for\ the\ player\ character.\r\n\ @param\ ready\ \ \ \ \ the\ instance\ of\ the\ Ready\ object\ (should\ only\ be\ one\ at\ any\ given\ time).\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Frogger\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\r\n\ act\ is\ called\ once\ per\ frame.\r\n\ Gets\ the\ world.\r\n\ Calls\ user\ input\ function.\r\n\ Calls\ sound\ clearing\ function\ to\ get\ rid\ of\ any\ extra\ sound\ effects.\r\n\ If\ the\ player\ passes\ the\ edge\ of\ the\ screen\ they\ die.\r\n
 comment3.params=
 comment3.target=void\ getKeys()
+comment3.text=\r\n\ getKeys\r\n\ Handles\ player\ movement\ based\ on\ inputs.\ Also\ adds\ sounds\ to\r\n\ the\ playing\ list.\r\n
 comment4.params=
 comment4.target=void\ die()
+comment4.text=\r\n\ die\r\n\ Spawns\ a\ Corpse\ and\ decrements\ live\ counter.\ Calls\ reset.\r\n
 comment5.params=
 comment5.target=void\ reset()
+comment5.text=\r\n\ reset\r\n\ Resets\ the\ rotation\ and\ position\ of\ the\ player.\r\n\ Starts\ the\ 'READY'\ part\ of\ the\ initilization.\r\n
 comment6.params=list\ file
 comment6.target=void\ addSound(java.util.ArrayList,\ java.lang.String)
+comment6.text=\r\n\ addSound\r\n\ Adds\ a\ sound\ to\ a\ list\ of\ sounds\ and\ plays\ it.\r\n\ (This\ allows\ sounds\ to\ stack.)\r\n\ \r\n\ @param\ list\ \ \ \ \ \ the\ ArrayList\ of\ sounds\r\n\ @param\ file\ \ \ \ \ \ the\ file\ path\ of\ the\ sound\ to\ add\r\n
 comment7.params=list
 comment7.target=void\ clearSounds(java.util.ArrayList)
+comment7.text=\r\n\ clearSounds\r\n\ Searches\ an\ array\ list\ for\ any\ sounds\ that\ are\ completed\ and\ removes\ them.\r\n\ \r\n\ @param\ list\ \ \ \ \ \ the\ ArrayList\ of\ sounds\r\n
 numComments=8

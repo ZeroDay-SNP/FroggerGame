@@ -2,10 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import greenfoot.GreenfootSound;
 
 /**
- * Write a description of class Start here.
+ * The world for the title screen.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author      Zachary Sousa
+ * @version     1.00
  */
 public class Start extends World
 {
@@ -15,7 +15,7 @@ public class Start extends World
 
     /**
      * Constructor for objects of class Start.
-     * 
+     * @param g     the main game world
      */
     public Start(Game g)
     {    
@@ -26,6 +26,12 @@ public class Start extends World
         addObject(title, getWidth()/2, getHeight()/2-100);
     }
     
+    /**
+     * act gets called once per frame.
+     * By pressing space the player can move to the Game.
+     * By pressing P the player can pause the music.
+     * By pressing M the player can mute the music.
+     */
     public void act() {
         if(titleTrack == null) {
             titleTrack = new GreenfootSound("funnysong.mp3");

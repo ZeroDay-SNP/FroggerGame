@@ -1,21 +1,27 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class corpse here.
+ * The decorative corpse that represents a previous death location for a small amount of time.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author      Zachary Sousa 
+ * @version     1.00
  */
 public class Corpse extends Actor
 {
     private int w = -99;
     private int h = -99;
     private GreenfootImage img;
-    int rotation;
-    int decay;
-    World world;
-    GreenfootSound squish;
+    private int rotation;
+    private int decay;
+    private World world;
+    private GreenfootSound squish;
     
+    /**
+     * Constructor for the corpse.
+     * @param w         the width of the corpse in pixels
+     * @param h         the height of the corpse in pixels
+     * @param rotation  the rotation of the corpse in degrees
+     */
     public Corpse(int w, int h, int rotation) {
         this.w = w;
         this.h = h;
@@ -27,8 +33,8 @@ public class Corpse extends Actor
     }
     
     /**
-     * Act - do whatever the corpse wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * act is called once per frame.
+     * Slowly turns the corpse invisible before removing it.
      */
     public void act()
     {

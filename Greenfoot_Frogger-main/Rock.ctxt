@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=Rock
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Rock\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ A\ rock\ that\ the\ player\ can\ stand\ on\ safely.\r\n\ \r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\r\n\ @version\ \ \ \ \ 1.00\r\n
 comment1.params=w\ h
 comment1.target=Rock(int,\ int)
-comment2.params=
-comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Rock\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-comment3.params=player
-comment3.target=void\ interact(Frogger)
+comment1.text=\r\n\ Constructor\ for\ the\ Rock\r\n\ @param\ w\ \ \ \ \ \ \ \ \ the\ width\ of\ the\ log\ in\ px\r\n\ @param\ h\ \ \ \ \ \ \ \ \ the\ height\ of\ the\ log\ moves\ in\ px\r\n
+comment2.params=player
+comment2.target=void\ interact(Frogger)
+comment2.text=\r\n\ interact\r\n\ Called\ once\ per\ frame\ by\ the\ Game.\r\n\ @param\ player\ \ \ \ \ \ \ \ the\ main\ player\ object\r\n
+comment3.params=
+comment3.target=boolean\ getTouch()
+comment3.text=\r\n\ getTouch\r\n\ @return\ \ \ \ \ \ true\ or\ false\ depending\ on\ if\ the\ player\ is\ touching\ the\ Rock\r\n
 numComments=4

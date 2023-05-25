@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ready here.
+ * A simple class that asks if the user is ready and plays a sound. 
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -13,27 +13,43 @@ public class Ready extends Actor
     private GreenfootImage img;
     private World world;
     
+    /**
+     * Constructor for Ready
+     * @param resetSound        the sound to play
+     */
     public Ready(GreenfootSound resetSound) {
         this.resetSound = resetSound;
         img = this.getImage();
         img.scale(200, 50);
     }
     
+    /**
+     * play
+     * Plays the sound
+     */
     public void play() {
         resetSound.play();
     }
     
+    /**
+     * stop
+     * Stops the sound
+     */
     public void stop() {
         resetSound.stop();
     }
     
+    /**
+     * getState
+     * @return      whether the sound is done/the player should be ready
+     */
     public boolean getState() {
         return isReady;
     }
     
     /**
-     * Act - do whatever the Ready wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * act is called once per frame.
+     * Controls variables transparecny based on whether the sound is playing.
      */
     public void act()
     {

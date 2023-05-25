@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=Car
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Car\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Simple\ moving\ car\ obstacle.\r\n\ \r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\r\n\ @version\ \ \ \ \ 1.00\r\n
 comment1.params=speed\ w\ h
 comment1.target=Car(int,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ the\ Car\r\n\ @param\ speed\ \ \ \ \ the\ speed\ that\ the\ car\ moves\ in\ px\r\n\ @param\ w\ \ \ \ \ \ \ \ \ the\ width\ of\ the\ car\ in\ px\r\n\ @param\ h\ \ \ \ \ \ \ \ \ the\ height\ of\ the\ car\ moves\ in\ px\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Car\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\r\n\ act\ is\ called\ once\ per\ frame,\ and\ just\ calls\ the\ super's\ act\ method.\r\n
 comment3.params=player
 comment3.target=void\ interact(Frogger)
+comment3.text=\r\n\ interact\r\n\ called\ once\ per\ frame\ by\ the\ Game\r\n\ @param\ player\ \ \ \ \ \ \ \ the\ main\ player\ object\r\n
 numComments=4

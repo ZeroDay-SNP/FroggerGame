@@ -2,10 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import greenfoot.GreenfootSound;
 
 /**
- * Write a description of class GameOver here.
+ * The world for the Game Over screen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author      Zachary Sousa
+ * @version     1.00
  */
 public class GameOver extends World
 {
@@ -15,7 +15,7 @@ public class GameOver extends World
 
     /**
      * Constructor for objects of class GameOver.
-     * 
+     * @param g     the main game world
      */
     public GameOver(Game g)
     {    
@@ -26,6 +26,10 @@ public class GameOver extends World
         //addObject(title, getWidth()/2, getHeight()/2-100);
     }
     
+    /**
+     * act is called once per frame.
+     * By pressing space the player can move to the title screen.
+     */
     public void act() {
         showText("GAME OVER\nPRESS SPACE", getWidth()/2, getHeight()/2);
         String key = Greenfoot.getKey();
