@@ -2,7 +2,7 @@
 <h3><em>One of the Frogger Games of all time.</em></h3>
 
 
-<h6>How to play:</h6>
+<h5>How to play:</h5>
 <ul>
   <li>WASD to hop</li>
   <li>Get ot the flag</li>
