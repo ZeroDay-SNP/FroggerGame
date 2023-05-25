@@ -40,7 +40,7 @@ Optional Requirements (Complete 6 to get 100%)
 
 *Multiplayer
 
-*Time limits	(TODO)
+*Time limits	(YES)
 
 **Screen-scrolling
 
@@ -50,4 +50,4 @@ Optional Requirements (Complete 6 to get 100%)
 
 *Unlockable achievements (Score multiple times)
 
-*Magical items of an impressive quality 	('READY' indicator? Highscore?)
+*Magical items of an impressive quality 	('READY' indicator? Highscore?, Sinking rocks?)

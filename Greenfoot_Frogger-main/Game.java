@@ -33,8 +33,13 @@ public class Game extends World
     private Home home;
     private Ready ready = new Ready(new GreenfootSound("reset.wav"));
     private GreenfootSound gameOverSound = new GreenfootSound("end.wav");
+    private GreenfootSound timeUpSound = new GreenfootSound("timeup.wav");
     private int defCarSpeed1 = 2;
     private int defCarSpeed2 = 5;
+    
+    private final int maxTime = 25;
+    private int timeLeft = maxTime;
+    private int frames = 0;
     
     /**
      * Constructor for the Game.
@@ -55,12 +60,22 @@ public class Game extends World
      * regarding the various game elements and player.
      */
     public void act(){
+        frames++;
+        if(ready.getState() && frames % 60 == 0) timeLeft--; 
+        if(!ready.getState()) timeLeft = maxTime;
+        if(timeLeft < 1) {
+            player.die();
+            timeLeft = maxTime;
+            timeUpSound.play();
+        }
+        
         if(bgmusic == null) {
             bgmusic = titleScreen.titleTrack;
             bgmusic.stop();
         }
         showText("Lives: " + lives, 50, 20);
         showText("Level: " + level, 300, 20);
+        showText("Time: " + timeLeft, 800, 20);
         // player.move(5);
         // if(player.getX()>this.getWidth()){
         //     player.setLocation(0, player.getY());
@@ -109,65 +124,19 @@ public class Game extends World
      * reset resets the playing field to a fresh start.
      */
     public void reset() {
-        
-         
-        removeObjects(getObjects(null));
-        addObject(ready, getWidth()/2, getHeight()/2);
-        
-        player = new Frogger(ready);
         lives = 3;
         level = 0;
-        addObject(player, getWidth()/2, getHeight()-25);
-
         
-        for(int i=0; i < numCars2; i++){
-            cars1[i] = new Car(defCarSpeed2, 50, 50);
-            addObject(cars1[i], 100 + i*200, getHeight() - 125);
-        }
-        for(int i=0; i < numCars1; i++){
-            cars2[i] = new Car(defCarSpeed1, 50, 50);
-            cars2[i].setRotation(180);
-            addObject(cars2[i], 100 + i*150, getHeight() - 225);
-        }
-        
-        for(int i=0; i < numLogs1; i++){
-            logs1[i] = new Log(3, 48*4, 11*4);
-            addObject(logs1[i], 50 + i*300, 275);
-        }
-        for(int i=0; i < numLogs2; i++){
-            logs2[i] = new Log(-3, 48*4, 11*4);
-            addObject(logs2[i], 100 + i*400, 175);
-        }
-        
-        for(int i=0; i < 5; i++){
-            rocks[i] = new Rock(50, 50);
-            addObject(rocks[i], 100 + i*200, 325);
-        }
-        
-        for(int i=5; i < 10; i++){
-            rocks[i] = new Rock(50, 50);
-            addObject(rocks[i], 100 + (i-5)*200, 125);
-        }
-        for(int i=10; i < 15; i++){
-            rocks[i] = new Rock(50, 50);
-            addObject(rocks[i], 50 + (i-10)*200, 225);
-        }
-        road1 = new Road();
-        addObject(road1, getWidth()/2, getHeight()-100);
-        road2 = new Road();
-        addObject(road2, getWidth()/2, getHeight()-250);
-        
-        river = new River();
-        addObject(river, getWidth()/2, 200);
-        
-        home = new Home(1);
-        addObject(home, getWidth()/2, 25);
+        newLevel();
     }
     
     /**
      * newLevel clears the screen and respawns the cars using a new speed based on the level number. Level and lives are stored.
      */
     public void newLevel() {
+        frames = 0;
+        timeLeft = maxTime;
+        
         removeObjects(getObjects(null));
         addObject(ready, getWidth()/2, getHeight()/2);
         
@@ -193,19 +162,27 @@ public class Game extends World
             addObject(logs2[i], 100 + i*400, 175);
         }
         
+        
+        boolean canSink = false;
+        if(level >= 6) canSink = true;
+        
         for(int i=0; i < 5; i++){
-            rocks[i] = new Rock(50, 50);
+            rocks[i] = new Rock(50, 50, canSink);
             addObject(rocks[i], 100 + i*200, 325);
         }
         
         for(int i=5; i < 10; i++){
-            rocks[i] = new Rock(50, 50);
+            rocks[i] = new Rock(50, 50, canSink);
             addObject(rocks[i], 100 + (i-5)*200, 125);
         }
+        
         for(int i=10; i < 15; i++){
-            rocks[i] = new Rock(50, 50);
+            rocks[i] = new Rock(50, 50, canSink);
             addObject(rocks[i], 50 + (i-10)*200, 225);
         }
+        
+        
+        
         road1 = new Road();
         addObject(road1, getWidth()/2, getHeight()-100);
         road2 = new Road();
