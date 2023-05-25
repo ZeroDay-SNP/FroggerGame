@@ -1,12 +1,9 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
-------------------------------------------------------------------------
-
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+FroggerGame
+One of the Frogger Games of all time.
+How to play:
+WASD to hop
+Get to the flag
+Avoid the cars and don't drown!
+Cars get faster every level
+Rocks begin to sink after level 5
+You have 25 seconds to complete each level
