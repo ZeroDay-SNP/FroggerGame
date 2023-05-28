@@ -1,16 +1,19 @@
 #BlueJ class context
-comment0.target=AbstOther
-comment0.text=\r\n\ Has\ \r\n\ speed\r\n\ width\ height\r\n\ world,\ img\r\n\ \r\n\ Does\r\n\ move\ to\ the\ side\ \r\n\ resets\ to\ the\ other\ side\r\n\ interacts\ with\ the\ player\r\n\ \r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\r\n\ @version\ \ \ \ \ 1.00\r\n
+comment0.target=AbstFly
+comment0.text=\r\n\ The\ fly\ flies\ down\ the\ screen.\ The\ Player\ should\ be\ able\ to\ interact\ with\ it.\r\n\ \r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\ \r\n\ @version\ \ \ \ \ 1.00\r\n
 comment1.params=speed
-comment1.target=AbstOther(int)
+comment1.target=AbstFly(int)
 comment1.text=\r\n\ Constructor\ for\ AbstOther\r\n\ @param\ speed\ \ \ \ \ the\ speed\ of\ the\ object\r\n
 comment2.params=speed\ w\ h
-comment2.target=AbstOther(int,\ int,\ int)
+comment2.target=AbstFly(int,\ int,\ int)
 comment2.text=\r\n\ Constructor\ for\ AbstOther\r\n\ @param\ speed\ \ \ \ \ the\ speed\ of\ the\ object\r\n\ @param\ w\ \ \ \ \ \ \ \ \ the\ width\ of\ the\ object\r\n\ @param\ h\ \ \ \ \ \ \ \ \ the\ height\ of\ the\ object\r\n
 comment3.params=
 comment3.target=void\ act()
 comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ AbstOther\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-comment4.params=player
-comment4.target=void\ interact(Frogger)
-comment4.text=\r\n\ interact\ called\ when\ interacting\ with\ the\ player\r\n
-numComments=5
+comment4.params=
+comment4.target=boolean\ getAlive()
+comment4.text=\r\n\ getAlive\r\n\ @return\ \ \ \ \ \ alive\r\n
+comment5.params=player
+comment5.target=void\ interact(Frogger)
+comment5.text=\r\n\ interact\ called\ when\ interacting\ with\ the\ player\r\n
+numComments=6

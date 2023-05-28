@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=LifeUp
+comment0.text=\r\n\ When\ the\ player\ interacts\ with\ this\ fly,\ the\ player\ will\ recieve\ an\ extra\ life.\r\n\ \r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\r\n\ @version\ \ \ \ \ 1.00\r\n
+comment1.params=
+comment1.target=LifeUp()
+comment1.text=\r\n\ Constructor\ for\ LifeUp\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ act\ is\ called\ once\ per\ frame,\ and\ just\ calls\ the\ super's\ act\ method.\r\n
+comment3.params=player
+comment3.target=void\ interact(Frogger)
+comment3.text=\r\n\ interact\ called\ every\ frame\ of\ gameplay\r\n
+numComments=4

@@ -33,7 +33,9 @@ public class Rock extends AbstOther
             player.setLocation(getX(), getY());
             isTouching = true;
             if(canSink) {
-                timeLeft -= 1;
+                if(!frog.hasPow()) {
+                    timeLeft -= 1;
+                }
                 int transparency = (((timeLeft*100/sinkTime*100)*255)/10000);
                 getImage().setTransparency(transparency);
                 if(timeLeft < 1) {

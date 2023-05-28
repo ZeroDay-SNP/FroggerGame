@@ -28,7 +28,9 @@ public class Log extends AbstOther
      */
     public void interact(Frogger player){
         if(intersects(player)) {
-            player.setLocation(player.getX()+speed, player.getY());
+            if(!frog.hasPow()) {
+                player.setLocation(player.getX()+speed, player.getY());
+            }
             isTouching = true;
         } else {
             isTouching = false;

@@ -28,11 +28,11 @@ Optional Requirements (Complete 6 to get 100%)
 
 *Custom-made sound assets	(YES, by technicality, they were mostly all arcade game sounds but I did have to edit them to sound proper)
 
-*Additional Actor subclasses over what we did in class	(TODO: Theres 1 right now)
+*Additional Actor subclasses over what we did in class	(YES)
 
-*Pickup items for some use in game	(TODO)
+*Pickup items for some use in game	(YES)
 
-*Muting of all sounds	(TODO)
+*Muting of all sounds	
 
 *Volume controls of all sounds
 
@@ -44,10 +44,10 @@ Optional Requirements (Complete 6 to get 100%)
 
 **Screen-scrolling
 
-*Powerups
+*Powerups	(YES)
 
 *Gaining custom skins
 
 *Unlockable achievements (Score multiple times)
 
-*Magical items of an impressive quality 	('READY' indicator? Highscore?, Sinking rocks?)
+*Magical items of an impressive quality 	('READY' indicator? Sinking rocks?)

@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
+import java.util.Random;
 
 /**
  * Main world that controls all of the game elements.
@@ -37,7 +38,9 @@ public class Game extends World
     private int defCarSpeed1 = 2;
     private int defCarSpeed2 = 5;
     
-    private final int maxTime = 25;
+    private AbstFly powUp;
+    
+    private final int maxTime = 20;
     private int timeLeft = maxTime;
     private int frames = 0;
     
@@ -48,7 +51,7 @@ public class Game extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1, false);
-        setPaintOrder(Ready.class, Car.class, Frogger.class,Rock.class, Log.class);
+        setPaintOrder(Ready.class, LifeUp.class, PowerUp.class, Car.class, Frogger.class,Rock.class, Log.class);
         reset();
         titleScreen = new Start(this);
         gameOver = new GameOver(this);
@@ -107,6 +110,16 @@ public class Game extends World
        
         home.interact(player);
         
+        if(powUp != null) {
+            powUp.interact(player);
+            if(powUp.getAlive() == false) {
+                powUp = null;
+                removeObject(powUp);
+            }
+        }
+            
+        
+        
         if(lives < 1) {
             lives = 3;
             Greenfoot.setWorld(gameOver);
@@ -117,6 +130,8 @@ public class Game extends World
         if((player.getY() <= 325 && player.getY() >= 125) && !safeLog && !safeRock) {
             player.die();
         }
+        
+        
         
     }
     
@@ -131,17 +146,40 @@ public class Game extends World
     }
     
     /**
+     * getFrog
+     * @return      the player
+     */
+    public Frogger getFrog() {
+        return player;
+    }
+    
+    /**
      * newLevel clears the screen and respawns the cars using a new speed based on the level number. Level and lives are stored.
      */
     public void newLevel() {
         frames = 0;
         timeLeft = maxTime;
-        
+        if(player != null) {
+            player.startTime();
+        }
+
         removeObjects(getObjects(null));
+        
         addObject(ready, getWidth()/2, getHeight()/2);
         
         player = new Frogger(ready);
         addObject(player, getWidth()/2, getHeight()-25);
+        
+        if(level % 3 == 0) {
+            if(new Random().nextInt(2) == 1) {
+                powUp = new PowerUp();
+                addObject(powUp, 0, 0);
+            } else {
+                powUp = new LifeUp();
+                addObject(powUp, 0, 0);
+            }
+        }
+        
 
         for(int i=0; i < numCars2; i++){
             cars1[i] = new Car(defCarSpeed2 + (int)(defCarSpeed1*(level*0.1)), 50, 50);

@@ -13,9 +13,11 @@ public class Frogger extends Actor
     private int leapSize = 50;
     private final int keyCooldown = 25;
     private int keyTimer = 0;
-    private GreenfootImage img;
+    private GreenfootImage img = new GreenfootImage("frog.png");
+    private GreenfootImage special = new GreenfootImage("frog2.png");
     private Game world;
     private String jumpFile = "jump.wav";
+    private GreenfootSound powerUpSound = new GreenfootSound("invincible.wav");
     private ArrayList<GreenfootSound> sounds = new ArrayList<GreenfootSound>();
     private Ready ready;
     
@@ -24,8 +26,9 @@ public class Frogger extends Actor
      * @param ready     the instance of the Ready object (should only be one at any given time).
      */
     public Frogger(Ready ready){
-        img = getImage();
+        setImage(img);
         img.scale(leapSize, leapSize);
+        special.scale(leapSize, leapSize);
         //jump = new GreenfootSound("jump.wav");
         this.ready = ready;
     }
@@ -54,6 +57,36 @@ public class Frogger extends Actor
         if(getX() > world.getWidth() || getX() < 0 || getY() > world.getHeight() || getY() < 0) {
             die();
         }
+        
+        if(powerUpSound.isPlaying()) {
+            setImage(special);
+        } else {
+            setImage(img);
+        }
+    }
+    
+    /**
+     * stopTime
+     * plays the powerup music and stops time
+     */
+    public void stopTime() {
+        powerUpSound.play();
+    }
+    
+    /**
+     * startTime
+     * stops the powerup music and starts time
+     */
+    public void startTime() {
+        powerUpSound.stop();
+    }
+    
+    /**
+     * hasPow
+     * @return T/F whether the power music is on
+     */
+    public boolean hasPow() {
+        return powerUpSound.isPlaying();
     }
 
     /**
@@ -112,6 +145,7 @@ public class Frogger extends Actor
      * Starts the 'READY' part of the initilization.
      */
     private void reset(){
+        powerUpSound.stop();
         setRotation(-90);
         setLocation(world.getWidth()/2, world.getHeight()-img.getHeight()/2);
         ready.play(); 
@@ -128,6 +162,17 @@ public class Frogger extends Actor
     private void addSound(ArrayList<GreenfootSound> list, String file) {
         list.add(new GreenfootSound(file));
         list.get(list.size()-1).play();
+    }
+    
+    /**
+     * playSound
+     * Play an instance of a single sound
+     * (useful for powerups)
+     * 
+     * @param file      the file path of the sound to add
+     */
+    public void playSound(GreenfootSound sound) {
+        sound.play();
     }
     
     /**

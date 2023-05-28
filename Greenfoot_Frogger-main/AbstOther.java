@@ -11,8 +11,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * resets to the other side
  * interacts with the player
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author      Zachary Sousa
+ * @version     1.00
  */
 public abstract class AbstOther extends Actor
 {
@@ -21,11 +21,22 @@ public abstract class AbstOther extends Actor
     protected int height;
     protected Game world;
     protected GreenfootImage img;
+    protected Frogger frog;
     
+    /*
+     * Constructor for AbstOther
+     * @param speed     the speed of the object
+     */
     public AbstOther(int speed){
         this.speed = speed;
     }
     
+    /*
+     * Constructor for AbstOther
+     * @param speed     the speed of the object
+     * @param w         the width of the object
+     * @param h         the height of the object
+     */
     public AbstOther(int speed, int w, int h){
         this.speed = speed;
         this.width = w;
@@ -42,19 +53,24 @@ public abstract class AbstOther extends Actor
     {
         if (world == null){
             world = (Game)getWorld();
+            frog = world.getFrog();
         }
-        //move it by speed
-        move(speed);
-        //if it reaches the edge of the screen
-        if(getX()>world.getWidth() + width/2){
-            //set it to the the side
-            setLocation(0 - width/2, getY());
-        }
-        else if(getX()<0 - width/2){
-            setLocation(world.getWidth() + width/2, getY());
-        }
-            
+        if(!frog.hasPow()) {
+            //move it by speed
+            move(speed);
+            //if it reaches the edge of the screen
+            if(getX()>world.getWidth() + width/2){
+                //set it to the other side
+                setLocation(0 - width/2, getY());
+            }
+            else if(getX()<0 - width/2){
+                setLocation(world.getWidth() + width/2, getY());
+            }
+        } 
     }
     
+    /**
+     * interact called when interacting with the player
+     */
     public abstract void interact(Frogger player);
 }
