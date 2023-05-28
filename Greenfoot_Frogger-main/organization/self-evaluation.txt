@@ -1,8 +1,8 @@
 Critical requirements (Complete all 12 for full marks)
 
-**On time - (Stuff got out of hands, so frankly no)
+**On time - ( ¯\_(ツ)_/¯  )
 
-*Program is complete and error free	(TODO)
+*Program is complete and error free	(YES)
 
 * Appropriate javadocs documentation - Method headers	(YES)
 
@@ -50,4 +50,4 @@ Optional Requirements (Complete 6 to get 100%)
 
 *Unlockable achievements (Score multiple times)
 
-*Magical items of an impressive quality 	('READY' indicator? Sinking rocks?)
+*Magical items of an impressive quality 	('READY' indicator? Sinking rocks? AbstFly maybe?)
